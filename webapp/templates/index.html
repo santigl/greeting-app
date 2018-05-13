@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Greeting App Demo{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1>Welcome to the Greeting App.</h1>
+    <p class="lead">Here you can receive a free world-class greeting.</p>
+    <hr>
+    {% if not session.username %}
+        <a href="/register"><button class="btn btn-primary">Register</button></a>
+        <a href="/login"><button class="btn btn-secondary">Log in</button></a>
+    {% else %}
+        <a href="/greeting"><button class="btn btn-success btn-lg">View your greeting</button></a>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Greeting{% endblock %}
+
+{% block content %}
+
+{% if greeting_message %}
+<h1>Greeting</h1>
+<p>This is your personalized greeting.</p>
+
+<div class="card w-50">
+  <div class="card-body">
+      <p class="h2">&ldquo;{{greeting_message}}&rdquo;</p>
+  <footer class="blockquote-footer">
+      The <tt>Java</tt> backend API
+  </footer>
+
+  </div>
+</div>
+{% else %}
+<h1>Error</h1>
+<p class="text-danger">There has been an error with the backend:</p>
+<p><tt>{{error_message}}</tt></p>
+{% endif %}
+
+{% endblock %}
